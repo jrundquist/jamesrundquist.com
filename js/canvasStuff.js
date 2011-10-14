@@ -65,8 +65,6 @@ jQuery(function ($) {
 		canvas.height = window.innerWidth;
 		ctx = canvas.getContext('2d');
 		$('#container').append(canvas).css({'position':'absolute','top':'0','left':'0'});
-		console.log(ctx);
-		
 		
 		lines = Array();
 		
@@ -86,8 +84,8 @@ jQuery(function ($) {
 		
 		
 		undraw();
-		lines.push(new Curve(circles, 4, '#f00', .03));
-		lines.push(new Curve(circles2, 4, '#00f', .03));
+		lines.push(new Curve(circles, 4, '#fff', .05));
+		lines.push(new Curve(circles2, 4, '#fff', .05));
 		
 		update();
 		
@@ -106,7 +104,7 @@ jQuery(function ($) {
 	
 	function undraw(){
 		ctx.globalAlpha = 1;
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ccc';
 		ctx.moveTo(0,0);
 		ctx.rect(0,0,canvas.width,canvas.height);
 		ctx.fill();
