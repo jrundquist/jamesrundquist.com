@@ -1,0 +1,384 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://ericmeyer.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow: none;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+del {text-decoration: line-through;}
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+input, select {vertical-align: middle;}
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+select, input, textarea {font: 99% sans-serif;}
+table {font-size: inherit; font: 100%;}
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+small {font-size: 85%;}
+strong, th {font-weight: bold;}
+td, td img {vertical-align: top;} 
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer;}
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+/* new Linux- and Windows-friendly sans-serif font stack:  */
+body {
+	font-size: 13px;
+	font-family: 'Nova Square', Freesans, sans-serif;
+	background: #F2F2F2;
+	background: #fff;
+	border-top:5px solid #CFCFCF;
+	opacity: 0;
+	
+	-webkit-transition:	all 1s ease-in-out;  /* Saf3.2+, Chrome */
+     -moz-transition:   all 1s ease-in-out;  /* FF4+ */
+      -ms-transition:   all 1s ease-in-out;  /* IE10? */
+       -o-transition:   all 1s ease-in-out;  /* Opera 10.5+ */
+          transition:   all 1s ease-in-out;
+}
+body.loaded{
+	opacity: 1;
+}
+
+/* we like off-black for text */
+body, select, input, textarea {
+	color: #333;	
+}
+
+a {color: #0CF;text-shadow:0 0 3px #777;}
+a:hover {color: #69f;}
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+
+
+
+
+.content{
+	width:800px;
+	margin: 0 auto;
+}
+.content > header{
+	position:fixed;
+	top:0;
+	left:0%;
+	width:400px;
+	height:50px;
+	margin-left:0;
+	margin-top:0;
+	font-size: 28px;
+	font-family:'Architects Daughter', cursive;
+	text-align:center;
+	background: transparent;
+	-webkit-opacity:	0.5;
+	   -moz-opacity:	0.5;
+	     -o-opacity:	0.5;
+			opacity:	0.5;
+	-webkit-transition:	all 0.5s ease-in-out;  /* Saf3.2+, Chrome */
+     -moz-transition:   all 0.5s ease-in-out;  /* FF4+ */
+      -ms-transition:   all 0.5s ease-in-out;  /* IE10? */
+       -o-transition:   all 0.5s ease-in-out;  /* Opera 10.5+ */
+          transition:   all 0.5s ease-in-out;
+}
+.content > header.center{
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:400px;
+	height:50px;
+	margin-left:-200px;
+	margin-top:-25px;
+	text-align:center;
+	background: transparent;
+	font-size: 50px;
+	-webkit-opacity:1;
+	   -moz-opacity:1;
+	     -o-opacity:1;
+			opacity:1;
+
+}
+.content > header > h1 {
+	color:#000;
+	-webkit-text-shadow: 0px 0px 2px rgba(0,0,0,.2), 1px 1px 1px #444;
+	 		text-shadow: 0px 0px 2px rgba(0,0,0,.2), 1px 1px 1px #444;
+}
+.content > header > h2 {
+	font-size:.5em;
+	color:#ededed;
+	margin-top: -10px;
+	margin-left: 60px;
+	-webkit-text-shadow: 0px 0px 2px rgba(0,0,0,.2), 1px 1px 1px #444;
+	 		text-shadow: 0px 0px 2px rgba(0,0,0,.2), 1px 1px 1px #444;
+}
+.content > footer {
+	position:fixed;
+	bottom:5px;
+	right: 80px;
+	text-shadow:none;
+}
+.content > footer a{
+	text-decoration:none;
+	font-family:'Architects Daughter', 'Helvetica', sans-serif;
+	color: #E37822;
+	text-shadow: none;
+	font-size:18px;
+	opacity: .9;
+}
+
+.content #middle-presentation{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 900px;
+	height: 600px;
+	margin: -300px 0 0 -450px;
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.15);
+	   -moz-box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    		box-shadow: 0 0 30px rgba(0,0,0,0.15);
+	border: 1px solid #dedede;
+	display: none;
+	overflow:hidden;
+	-webkit-opacity:1;
+	   -moz-opacity:1;
+	     -o-opacity:1;
+			opacity:1;
+	background: #F2F2F2;
+}
+.content #middle-presentation.up{
+}
+.content #middle-presentation.active{
+}
+
+
+#middle-presentation section{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+	-webkit-transition:	all 0.6s ease-in-out;  /* Saf3.2+, Chrome */
+     -moz-transition:   all 0.6s ease-in-out;  /* FF4+ */
+      -ms-transition:   all 0.6s ease-in-out;  /* IE10? */
+       -o-transition:   all 0.6s ease-in-out;  /* Opera 10.5+ */
+          transition:   all 0.6s ease-in-out;
+	background: #fff;
+}
+
+section.old{
+	display:none;
+}
+section.previous{
+	opacity: 0.8;
+	left:-105% !important;
+	z-index:20;
+}
+section.current{
+	dispaly:block;
+	opacity:1;
+	z-index:30;
+	left:0 !important;
+}
+section,
+section.next{
+	dispaly:block;
+	opacity:0.8;
+	left:105% !important;
+	z-index:40;
+}
+section.next ~ section {
+	display:none;	
+	left:105% !important;
+}
+
+section h1{
+	font-family:'Architects Daughter', cursive;
+	font-size:3em;
+	text-align:center;
+	width:100%;
+	margin: 50px auto 50px auto;
+}
+section h2{
+	font-size: 3em;
+	text-align: center;
+	width: 80%;
+	text-indent: 0;
+	margin: 1.2em auto .8em auto;
+	border-bottom: 1px solid #DDD;
+}
+
+section.chapter h1{
+	position:absolute;
+	font-family:'Architects Daughter', cursive;
+	font-size:3.2em;
+	text-align:center;
+	width:100%;
+	height: 40px;
+	top:40%;
+	margin:0;
+	vertical-align:middle;
+}
+section.chapter h2{
+	font-family: 'Architects Daughter', cursive;;
+	font-size: 24px;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	text-indent: 0;
+	border-bottom: none;
+}
+section img{
+	margin: -3em 15px 15px;
+	width: 870px;
+	height: 460px;
+}
+ul{
+	width: 400px;
+	margin: 30px 0 30px 40px;
+	border-right: 3px solid #E37822;
+	padding-right: 30px;
+	list-style: bullet;
+	text-align: right;
+}
+ul li{
+	margin: 0 0 10px 0;
+	font-size:27px;
+}
+aside {
+	
+}
+aside img {
+	width: 165px;
+	height: auto;
+	position: relative;
+	top: -120px;
+	left: 510px;
+	margin: 0;
+}
+iframe { 
+	position: absolute;
+	top: 120px;
+	left: 50px;
+	width: 800px;
+	height: 460px;
+}
+
+
+.blue{
+	color: #0092D0;
+}
+.orange{
+	color: #E37822;
+}
+
+
+
+
+
+
+/* Print styles!
+-------------------------------------------------------------------------------*/
+@media print {
+
+
+
+}
+
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+}
+
+@media all and (orientation: portrait) {
+
+}
+
+@media all and (orientation: landscape) {
+
+}

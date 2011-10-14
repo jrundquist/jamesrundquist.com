@@ -1,0 +1,378 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset=utf-8 /> 
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>James Rundquist</title>
+	<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+	<link href="styles/master.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+	<div class="content">
+		<header class="center">
+			<h1>James Rundquist</h1>
+			<h2><span class="orange">W</span>eb Developer</h2>
+		</header>
+	
+		<article id="middle-presentation">
+			
+			
+			
+			<section class="chapter" name="who-am">
+				<h1>Who I am <span class="blue">currently</span></h1>
+			</section>
+			<section name="student">
+				<h1>Student</h1>
+				
+				<h2>Georgia Institute of Technology</h2>
+				<ul>
+					<li>Computer Science</li>
+					<li><span class="blue">People</span> &amp; Artificial Intelligence </li>
+					<li>2013</li>
+				</ul>
+			</section>
+			<section  name="jobs">
+				<h1>Employee</h1>
+				<h2>What's Up Interactive</h2>
+				<ul>
+					<li>Font and Back-End <span class="blue">Developer</span></li>
+					<li>2008-Present</li>
+				</ul>
+				<h2>Freelance Developer</h2>
+				<ul>
+					<li>2010-Present</li>
+				</ul>
+			</section>
+			
+			
+			
+			<section class="chapter" name="experience">
+				<h1>What I have <span class="blue">done</span></h1>
+				<h2>In order of awesomeness</h2>
+			</section>
+			<section name="cs">
+				<h1>CourseShark<span class="orange">.com</span></h1>
+				<!--
+					<iframe src="http://courseshark.com" scrolling="no"></iframe>
+				-->
+				<img src="images/courseshark.png" alt="CourseShark" />
+			</section>
+			<section name="localizer">
+				<h1>The Localizer</h1>
+				<img src="images/localizer.png" alt="The Localizer" />
+			</section>
+			<section name="twitter">
+				<h1>TWhere in Tweet TWorld</h1>
+				<img src="images/tweet.png" alt="TWhere in Tweet TWorld" />
+			</section>
+			<section name="self">
+				<h1>This <span class="blue">Presentation</span></h1>
+				<ul>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>Javascript</li>
+				</ul>
+				<aside>
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" alt="HTML5 Badge" />
+				</aside>
+			</section>
+			
+			
+			
+			<section class="chapter" name="likes">
+				<h1>What I <span class="blue">like</span></h1>
+			</section>
+			<section name="web-dev">
+				<h1>Web Development</h1>
+				<ul>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>Javascript</li>
+					<li>PHP</li>
+					<li>MySQL</li>
+					<li>Web Design</li>
+					<li>LAMP Management</li>
+				</ul>
+			</section>
+			<section name="web-dev">
+				<h1>User Behaviors</h1>
+				<ul>
+					<li>Usability</li>
+					<li>User Experience</li>
+					<li>Psychology of Users</li>
+					<li>Interface Design</li>
+					<li>Visualization of Information</li>
+				</ul>
+			</section>
+			<section name="web-dev">
+				<h1>Random Others</h1>
+				<ul>
+					<li>Robotics</li>
+					<li>Futurama</li>
+					<li>Cooking</li>
+					<li>Computer Vision</li>
+					<li>Squash</li>
+				</ul>
+			</section>
+			
+			
+			
+			<section class="chapter" name="end">
+				<h1>&lt;/presentation&gt;</h1>
+			</section>
+			
+		</article>
+	
+	
+	
+		<footer>
+			<a href="RundquistJames.pdf" target="_blank">R&eacute;sum&eacute;</a>
+		</footer>
+	</div>
+	
+	
+	
+	<script src="js/modernizr.custom.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>	
+	
+	<script>
+		var slideList,
+			currentId = -1,
+			ratio = [-1,-1],
+			transitionsAvailable;
+		
+		function slideAnimation(){
+			$('#middle-presentation').addClass('up');
+			setTimeout("$('#middle-presentation').removeClass('up');",300);
+		}
+
+		function showSlide(slideId){
+			var old, previous, current, next;
+			
+			slideId = parseInt(slideId==undefined?(currentId+1):slideId);
+			
+			if ( slideId > 1 ) 
+				slideAnimation();
+			
+			if ( slideId-2 >= 0 )
+			 	old = slideList[slideId-2];
+			if ( slideId-1 >= 0 )
+				previous = slideList[slideId-1];
+			
+			current = slideList[slideId];
+			next = slideList[slideId+1];
+			
+			for ( idx in slideList ){
+				if ( idx < slideId - 1 ){
+					$(slideList[idx]).removeClass('previous')
+							.removeClass('current')
+							.removeClass('next')
+							.addClass('old');
+				}
+				if ( idx == slideId - 1 ){
+					if ( !transitionsAvailable ){
+						leftPx = parseInt($(slideList[idx]).width()) * -1.05;
+						$(slideList[idx]).removeClass('old')
+									.addClass('previous')
+									.removeClass('current')
+									.removeClass('next')
+									.fadeOut();
+					}else{
+						$(slideList[idx]).removeClass('old')
+								.addClass('previous')
+								.removeClass('current')
+								.removeClass('next');
+					}
+				}
+				if ( idx == slideId ){
+					if ( !transitionsAvailable ){
+						$(slideList[idx]).removeClass('old')
+									.removeClass('previous')
+									.addClass('current')
+									.removeClass('next')
+									.fadeIn();
+					}else{
+						$(slideList[idx]).removeClass('old')
+								.removeClass('previous')
+								.addClass('current')
+								.removeClass('next');
+					}
+				}
+				if ( idx == slideId + 1 ){
+					
+					if ( !transitionsAvailable ){
+						$(slideList[idx]).removeClass('old')
+										.removeClass('previous')
+										.removeClass('current')
+										.addClass('next')
+										.fadeOut();
+					}else{
+						$(slideList[idx]).removeClass('old')
+								.removeClass('previous')
+								.removeClass('current')
+								.addClass('next');
+					}
+				}
+				
+				
+				if ( idx > slideId + 1 ){
+					$(slideList[idx]).removeClass('old')
+							.removeClass('previous')
+							.removeClass('current')
+							.removeClass('next');
+				}
+			}
+
+			currentId = slideId;
+			window.location.hash = $(slideList[slideId]).attr('name');
+			
+		}
+
+		function slideBack() {
+			if ( currentId > 0 ){
+				showSlide(currentId-1);
+			}
+			else{
+				currentId = -1;
+				$('#middle-presentation').fadeOut(function(){
+					$('header').addClass('center');
+					window.location.hash = "#intro";
+				});
+			}
+		}
+		function slideForward() {
+			if ( currentId < 0 ){
+				$('header.center').removeClass('center').animate({'z-index':1},500, function(){
+					$('#middle-presentation').fadeIn(function(){$(this).css({'opacity':1});});
+					showSlide(0);
+				});
+				return;
+			}
+			else if ( currentId < slideList.length-1 )
+				showSlide(currentId+1);
+		}
+
+
+		function loadHash(){
+			var slideName = window.location.hash.split("#")[1];
+			if ( slideName ) {
+				foundId = -1;
+				for ( sIndex in slideList ){
+					thisName = $(slideList[sIndex]).attr('name');
+					if ( thisName == slideName ){
+						foundId = sIndex;
+						break;
+					}
+				}
+				
+				if ( currentId < 0 && foundId > 0 ){
+					$('header.center').removeClass('center').animate({'z-index':1},500, function(){
+						$('#middle-presentation').fadeIn(function(){$(this).css({'opacity':1});});
+						showSlide(foundId);
+					});
+				}
+			}
+		}
+			
+		function resize() {
+			container = $('#middle-presentation')[0];
+			if ( !container ) return;
+			var sx = $(container).width() / window.innerWidth;
+			var sy = $(container).height() / window.innerHeight;
+			
+			if ( ratio[0] == -1 )
+				ratio[0] = sx;
+			if ( ratio[1] == -1 )
+				ratio[1] =  sy;
+			var transform = "scale(" + (Math.min(ratio[0]/sx, ratio[1]/sy)) + ")";
+			container.style.MozTransform = transform;
+			container.style.WebkitTransform = transform;
+			container.style.OTransform = transform;
+			container.style.msTransform = transform;
+			container.style.transform = transform;
+		}
+		
+		window.onload = function() {
+			slideList = document.querySelectorAll("article > section");
+			transitionsAvailable = Modernizr.csstransitions;
+			setupTouchEvents();
+			loadHash();
+			window.onresize = resize;
+			resize();
+			document.body.className = "loaded";
+		}
+		
+
+
+		window.onkeydown = function(e) {
+		    // Don't intercept keyboard shortcuts
+		    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+		        return;
+		    }
+		    if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 33) {
+		        e.preventDefault();
+		        slideBack();
+		    }
+		    if (e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 34 ) {
+		        e.preventDefault();
+		        slideForward();
+		    }
+
+		    if (e.keyCode == 32) {
+		        e.preventDefault();
+		        //toggleContent();
+		    }
+		}
+
+		function cssTransitions() {
+			m = document.createElement('z');
+			s = m.style;
+			function test_props( p ) {
+				for ( var i in p ) {
+					if ( s[ p[i] ] ) {
+						return true;
+					}
+				}
+				return false;
+			}
+			function test_props_all( prop ) {
+				d = 'Webkit Moz O ms Khtml'.split(' ');
+				var u = prop.charAt(0).toUpperCase() + prop.substr(1);
+				e = (prop + ' ' + d.join(u + ' ') + u).split(' ');
+				return test_props( e );
+			}
+			return test_props_all( 'animationName' );
+		}
+		function setupTouchEvents() {
+		    var orgX,
+				delta,
+				tracking = false;
+
+			document.body.addEventListener("touchstart", start, false);
+			document.body.addEventListener("touchmove", drag, false);
+
+			function start(e) {
+				e.preventDefault();
+				tracking = true;
+ 				orgX = e.changedTouches[0].pageX;
+			}
+
+			function drag(e) {
+				if (!tracking)
+					return;
+				delta = orgX - e.changedTouches[0].pageX;
+				if (delta > 100) {
+					tracking = false;
+					slideForward();
+				} else if (delta < -100) {
+					tracking = false;
+					slideBack();
+				}
+			}
+		}
+	</script>
+</body>
+</html>

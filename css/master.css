@@ -1,0 +1,36 @@
+body{
+	color: #000;
+	background: #000;
+	overflow: hidden;
+	font-family: 'Terminal Dosis', sans-serif;
+}
+body.error{
+	background: #fff;
+}
+a, a:hover, a:visited{
+	color:#fff;
+}
+
+#error{
+	color: #fff;
+	font-size:30px;
+	font-weight: 600;
+	text-align: center;
+	width:400px;
+	padding: 20px;
+	margin: 170px auto 0;
+	background: #500;
+	border:8px solid #880000;
+	box-shadow: 0 0 5px #000;
+}
+
+canvas#drawIt{
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-o-transform-origin: top left;
+	transform-origin: top left;
+}
