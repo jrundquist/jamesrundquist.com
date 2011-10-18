@@ -18,12 +18,13 @@ jQuery(function ($) {
 		this.y = y;
 	}
 
-	function Curve(points, width, color, step){
+	function Curve(points, width, color, step, instantDraw){
 		this.points = points;
 		this.strokeStyle = color==undefined?'#000':color;
 		this.lineWidth = width==undefined?1:width;
 		this.t = 0;
 		this.step = step==undefined?.01:step;
+		this.instant = instantDraw!=undefined;
 		this.done = false;
 	}
 	Curve.prototype.update = function(ctx){
@@ -51,6 +52,7 @@ jQuery(function ($) {
 		ctx.stroke();
 		ctx.restore();
 		this.t += this.step;
+		if ( this.instant ){this.update(ctx);}
 	}
 	
 		
@@ -84,8 +86,8 @@ jQuery(function ($) {
 		
 		
 		undraw();
-		lines.push(new Curve(circles, 4, '#fff', .05));
-		lines.push(new Curve(circles2, 4, '#fff', .05));
+		lines.push(new Curve(circles, 4, '#fff', .05, 1));
+		lines.push(new Curve(circles2, 4, '#fff', .05, 1));
 		
 		update();
 		
@@ -95,11 +97,7 @@ jQuery(function ($) {
 	
 	
 	function update(){
-		if ( lines[0] !== undefined ){
-			lines[0].update(ctx);
-			if ( lines[0].done ) lines.shift();
-			requestAnimFrame(update);
-		}
+
 	}
 	
 	function undraw(){

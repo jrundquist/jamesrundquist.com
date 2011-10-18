@@ -5,7 +5,8 @@
 		<title>James Rundquist</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:400,600' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/master.css">
+		<link rel="stylesheet" type="text/css" href="/css/master.css">
+		<link rel="stylesheet" type="text/css" href="styles/spline.css">
 
 		<script type="text/html" id="error-msg-compatable">
 			<div id="error">
@@ -19,12 +20,29 @@
 	</head>
 	<body>
 		<div id="container"></div>
+		
+		<aside id="controls">
+			<button id="add-pt">Add Point</button>
+			<button id="add-spline">Begin new Spline</button>
+			<button id="undo">Undo</button>
+			
+			<p>Draw Step</p>
+			<input id="step" type="range"  min="1" max="80" step="1" value="9"/>
+			
+			<p>Stroke</p>
+			<input id="fluid" type="checkbox"  value="1"/>
+			
+			<p>Code</p>
+			<textarea id="points"></textarea>
+			
+		</aside>
+		
 		<!-- if [ie lt 9]>
 		<script src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js'></script>
 		<![endif]-->
 		<script src="/js/modernizr-2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="js/canvasStuff.js"></script>
+		<script src="js/b-edit.js"></script>
 	</body>
 
 </html>
