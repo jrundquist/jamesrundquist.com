@@ -170,7 +170,7 @@ function deepCopy(obj) {
 		});
 		
 				
-		
+
 		// J
 		points0 = Array();
 		points0.push(new Point(772, 397));
@@ -206,7 +206,7 @@ function deepCopy(obj) {
 		// 2
 		points3 = Array();
 		points3.push(new Point(806, 205));
-		points3.push(new Point(786, 282));
+		points3.push(new Point(761, 306));
 		points3.push(new Point(1120, 168));
 		points3.push(new Point(1017, 333));
 		points3.push(new Point(786, 402));

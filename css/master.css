@@ -1,11 +1,11 @@
 body{
-	color: #000;
-	background: #000;
+	color: #222;
+	background: #FFF;
 	overflow: hidden;
 	font-family: 'Terminal Dosis', sans-serif;
 }
 body.error{
-	background: #fff;
+	background: #ccc;
 }
 a, a:hover, a:visited{
 	color:#fff;
