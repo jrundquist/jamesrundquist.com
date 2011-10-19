@@ -24,13 +24,13 @@ a, a:hover, a:visited{
 	box-shadow: 0 0 5px #000;
 }
 
-canvas#drawIt{
-	position: absolute;
-	top: 0;
-	left: 0;
-	-webkit-transform-origin: top left;
-	-moz-transform-origin: top left;
-	-ms-transform-origin: top left;
-	-o-transform-origin: top left;
-	transform-origin: top left;
+#container{
+	margin: 100px auto;
+	width: 420px;
+}
+
+canvas#sig{
+/*	color:#0CC;
+*/
+	color:#E37822
 }

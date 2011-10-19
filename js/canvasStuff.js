@@ -105,11 +105,13 @@ jQuery(function ($) {
 	}else{
 		
 		canvas = document.createElement("canvas");
-		canvas.id = "draw-canvas";
-		canvas.width = 410;
+		canvas.id = "sig";
+		canvas.width = 420;
 		canvas.height = 110;
 		ctx = canvas.getContext('2d');
-		$('#container').append(canvas).css({'position':'absolute','top':'0','left':'0'});
+		$('#container').append(canvas);
+		
+		color = $(canvas).css('color');
 		
 		$.ajax({
 			url:'/js/sig.pts',
@@ -129,10 +131,10 @@ jQuery(function ($) {
 						
 						lines
 						
-						if ( [null,0,6,12,17,24].indexOf(s) > 0 ){
+						if ( [null,0,6,12,17,24,37].indexOf(s) > 0 ){
 							console.log('pushhing ',s);
 							
-							lines.push(new Curve(Array(), 3, '#0cc', .01, false, 20));
+							lines.push(new Curve(Array(), 3, color, .01, false, 20));
 						}
 						lines[lines.length-1].points.push(new Point(pts[0],pts[1]));
 					}
