@@ -100,8 +100,7 @@ jQuery(function ($) {
 	
 		
 	if ( !Modernizr.canvas ){
-		fatalError('error-msg-compatable');
-		return;
+		$('#container').append('<img id="sig" src="/img/sig.png" alt="James Rundquist" />');
 	}else{
 		
 		canvas = document.createElement("canvas");
