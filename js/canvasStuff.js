@@ -108,7 +108,7 @@ jQuery(function ($) {
 		canvas.width = 420;
 		canvas.height = 110;
 		ctx = canvas.getContext('2d');
-		$('#container').append(canvas);
+		$('#sig-container').append(canvas);
 		
 		color = $(canvas).css('color');
 		
@@ -166,6 +166,8 @@ jQuery(function ($) {
 			drawlines[0].update(ctx);
 			if ( drawlines[0].done ) drawlines.shift();
 			requestAnimFrame(updateLines);
+		}else{
+			$('body').removeClass('loading').addClass('fade');
 		}
 	}
 	
