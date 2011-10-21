@@ -20,10 +20,10 @@
 		<header id="header">
 			<nav>
 				<ul>
-					<li><a href="#about-me">About Me</a></li>
-					<li><a href="#what-i-do">What I do</a></li>
-					<li><a href="#work">My Work</a></li>
-					<li><a href="#contact">Talk to me</a></li>
+					<li><a class="scroll" href="#about-me">About Me</a></li>
+					<li><a class="scroll" href="#what-i-do">What I do</a></li>
+					<li><a class="scroll" href="#work">My Work</a></li>
+					<li><a class="scroll" href="#contact">Talk to me</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -42,7 +42,7 @@
 				<section class="center" id="about-me">
 					<header> 
 						<h1><strong>A</strong>bout Me</h1>
-						<a href="#top">top</a>
+						<a class="scroll" href="#top">top</a>
 					</header>
 					<h3><strong>H</strong>ello</h3>
 					<p>
@@ -54,7 +54,7 @@
 				<section class="left" id="what-i-do">
 					<header> 
 						<h1><strong>W</strong>hat I Do</h1>
-						<a href="#top">top</a>
+						<a class="scroll" href="#top">top</a>
 					</header>
 					<p>
 						Web Development, Design, UX, etc.... 
@@ -73,6 +73,18 @@
 		<script src="/js/modernizr-2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="/js/canvasStuff.js"></script>
+		
+		<script>
+		$('.scroll').bind('click',function(event){
+			var $anchor = $(this);
+			
+			$('html, body').stop().animate({
+				scrollTop: ($($anchor.attr('href')).offset().top - ($('#header').height()*1.5))
+			}, 500, 'swing');
+
+			event.preventDefault();
+		});
+		</script>
 	</body>
 
 </html>
