@@ -8,9 +8,10 @@
 /* Colors*/
 @orange: #E37822;
 @blue: #0092D0;
-@highlight: @blue;
 @white: #FFF;
+@grey: #AEACC1;
 @font: #4f4f5f;
+@highlight: @blue;
 
 //
 // Configuration
@@ -82,7 +83,9 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-body {min-height: 100%; font-size: 100%;}
+body {
+	min-height: 100%; font-size: 100%;
+}
 
 sub, sup {
 	font-size: 75%; 
@@ -209,17 +212,19 @@ body{
 	color: @font;
 	background: @white;
 	font-family: 'Open Sans Condensed', 'Myriad Pro', sans-serif;
+	.normal();
 }
 a, a:hover, a:visited{
-	color:@blue;
-	text-decoration:none;
-}
-a:hover{
-	text-decoration: underline;
+	color:@orange;
+	text-decoration:underline;
 }
 
 p {
 	font-family: 'Ubuntu', sans-serif;
+	text-align: justify;
+	font-weight: lighter;
+	margin-bottom: 1em;
+	.small
 }
 strong{
 	font-weight: inherit;
@@ -284,12 +289,17 @@ article{
 		margin: 0 auto;
 	}
 	
+	
+	section:after{
+		clear: both;
+	}
 	section{
+		clear: both;
 		width: @10cols;
-		margin: 0 0 @1_2cols 0;
+		margin: 0 0 @2cols 0;
 		padding: 0 0 0 @1cols;
 		position: relative;
-		
+	
 		header {
 			background-color: @white;
 			height: @1col;
@@ -303,14 +313,42 @@ article{
 				margin-bottom: 0.1em;
 			}
 		}
+
+		figure{
+			float: right;
+			width: 30%;
+			margin-left: 5%;
+			padding: 0.1em;
+			border: 0.3em solid @font;
+			img{
+				max-width: 100%;
+				float:left;
+			}
+			figcaption{
+				clear:both;
+				background: @grey;
+				color: @white;
+				font-family: 'Ubuntu', sans-serif;
+				font-size: 0.6em;
+				line-height: 110%;
+				padding: 0.2em 5%;
+				margin:0;
+			}
+		}
 	}
 }
 
 
 
+
+
 footer{
-	padding: 0 0 @2cols 0;	
 	clear: both;
+	margin: @2cols auto 0;
+ 	padding: 0 0 @2cols 0;
+	font-family: 'Ubuntu', sans-serif;
+	border-top: 1px solid @font;
+	.small;
 }
 
 
@@ -335,7 +373,7 @@ footer{
 	body {
 		font-size: (@font-size - 2)/16*1em;
 	}
-	#introduction, article #container {
+	#introduction, article {
 		padding-left: 10/@em;
 		padding-right: 10/@em;
 	}
@@ -372,7 +410,7 @@ footer{
 	}
 	
 	
-	#introduction, article {
+	#introduction, article, footer {
 		width: @4cols;
 		max-width: none;
 		padding-left: 0;
@@ -416,7 +454,15 @@ footer{
 			-o-transform: none;
 			transform: none;
 		}
-			
+		
+		figure{
+			width: 50%;
+			img{
+			}
+			figcaption{
+				font-size: 0.4em;
+			}
+		}
 		
 	}
 	
@@ -435,7 +481,7 @@ footer{
 		content:"mobile-wide";
 	}
 	
-	#introduction, article {
+	#introduction, article, footer {
 		width: @6cols;
 	}
 	
@@ -465,6 +511,16 @@ footer{
 			header{
 				width: @6cols;
 			}
+			
+			figure{
+				width: 40%;
+				img{
+				}
+				figcaption{
+					font-size: 0.6em;
+				}
+			}
+			
 		}
 	}
 	
@@ -483,7 +539,7 @@ footer{
 		content:"tablet";
 	}
 	
-	#introduction, article{
+	#introduction, article, footer{
 		width: @8cols;
 	}
 	
@@ -554,8 +610,17 @@ footer{
 		content:"wide";
 	}
 		
-	#introduction, article {
+	#introduction, article, footer {
 		width: @12cols;
+	}
+	
+	p{
+		font-size: 1.0125em;
+		line-height: 1.51875em;
+	}
+	
+	h3{
+		.large
 	}
 	
 	article section{
@@ -594,10 +659,14 @@ footer{
 		content:"big";
 	}
 	
-	#introduction, article {
+	#introduction, article, footer {
 		width: @13cols+@13cols+(24/@em);
 		margin-left: auto;
 		margin-right: auto;
+	}
+	
+	article section{
+		width: @13cols+@13cols+(24/@em);
 	}
 	
 
