@@ -1,0 +1,14 @@
+{
+    "name": "jamesrundquist-website"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.1"
+    , "jade": ">= 0.0.1"
+    , "express-messages": ">=0.0.2"
+    , "connect-less": ">=0.2.2"
+    , "ezcrypto": ">=0.0.3"
+    , "mongoose": ">=0.9.7"
+		, "connect": "1.8.x"
+  }
+}

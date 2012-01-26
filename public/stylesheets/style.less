@@ -1,0 +1,466 @@
+@import 'vars.less';
+@import 'frameless.less';
+
+body{
+	color: @font;
+	background: @white;
+	font-family: 'Open Sans Condensed', 'Myriad Pro', 'Helvetica', sans-serif;
+	.normal();
+}
+a, a:hover, a:visited{
+	color:@orange;
+	text-decoration:underline;
+}
+
+p {
+	font-family: 'Ubuntu', sans-serif;
+	text-align: justify;
+	font-weight: lighter;
+	margin-bottom: 1em;
+	.small
+}
+strong{
+	font-weight: inherit;
+ 	color: @highlight;
+}
+
+header#header{
+	background-color: rgba(20, 20, 20, 0.6);
+	top: 0;
+	padding: 0.2em 0 0.25em;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	text-align:center;
+	ul{
+		margin: 0 auto;
+		width: @8cols;
+		li{
+			display: inline;
+			margin: 0 @gutter*1px;
+			a{
+				color: @white;
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+#introduction, article {
+	padding: 0 18/@em;
+	margin: 0 auto;
+	max-width: @8cols;
+}
+
+#sig-container{
+	margin: 100px auto 0;
+	width: 100%;
+	
+ 	canvas#sig{
+		color:#E37822;
+		margin: 0 auto;
+		width:100%;
+		max-width:420px;
+	}
+}
+
+#introduction{
+	margin: 0 auto;
+	width: @12cols;
+	padding: 0 @gutter;
+ 	
+	h1, h2 {
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing:0;
+	}
+}
+
+article{
+	
+	#container{
+		margin: 0 auto;
+	}
+	
+	
+	section:after{
+		clear: both;
+	}
+	section{
+		clear: both;
+		width: @10cols;
+		margin: 0 0 @2cols 0;
+		padding: 0 0 0 @1cols;
+		position: relative;
+	
+		header {
+			background-color: @white;
+			height: @1col;
+			width: @3cols;
+			text-align: right;
+
+			h1{
+				.large();
+				text-transform: uppercase;
+				border-bottom: 1px solid #555;
+				margin-bottom: 0.1em;
+			}
+		}
+
+		figure{
+			float: right;
+			width: 30%;
+			margin-left: 5%;
+			padding: 0.1em;
+			border: 0.3em solid @font;
+			img{
+				max-width: 100%;
+				float:left;
+			}
+			figcaption{
+				clear:both;
+				background: @grey;
+				color: @white;
+				font-family: 'Ubuntu', sans-serif;
+				font-size: 0.6em;
+				line-height: 110%;
+				padding: 0.2em 5%;
+				margin:0;
+			}
+		}
+	}
+}
+
+
+
+
+
+footer{
+	clear: both;
+	margin: @2cols auto 0;
+ 	padding: 0 0 @2cols 0;
+	font-family: 'Ubuntu', sans-serif;
+	border-top: 1px solid @font;
+	.small;
+}
+
+
+.loading #container, .loading header#header, .loading #introduction #text{
+	opacity: 0;
+}
+
+.fade #container, .fade #introduction div#text, .fade header#header,{
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+
+/*
+	Full page zooms
+	0.882352941 0.941176471 1.058823529 1.117647059
+*/
+
+@media screen and (max-width: 16.875em) {	
+	body {
+		font-size: (@font-size - 2)/16*1em;
+	}
+	#introduction, article {
+		padding-left: 10/@em;
+		padding-right: 10/@em;
+	}
+}
+
+/*
+	Mobile layout 
+	240–479 px
+	Zoomed out below 320 px
+*/
+
+@media screen and (min-width: 15em) {
+	
+	body:before{
+		content:"mobile";
+		opacity:0.1;
+	}
+	
+	header#header{
+		ul{
+			margin: 0 auto;
+			width: @4cols;
+			li{
+				display: block;
+				float:left;
+				width: @2cols;
+				margin:0;
+				a{
+					olor: @white;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+	
+	
+	#introduction, article, footer {
+		width: @4cols;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	article {
+		margin-top: 3em;
+	}
+	
+	#introduction{
+		
+		#sig-container{
+			margin: @1_2cols auto @1_2cols;
+		}
+		
+		h1 {
+			.large;
+			margin-bottom:0px;
+		}
+		h2 {
+			text-transform: lowercase;
+
+			.small;
+			font-weight: 300;
+			position: relative;
+			right: 1em;
+			top: -0.5em;
+		}
+	}
+	
+	article section{
+		width: @4cols;
+		padding: 0;
+		
+		header {
+			width: @4cols;
+			-webit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		}
+		
+		figure{
+			width: 50%;
+			img{
+			}
+			figcaption{
+				font-size: 0.4em;
+			}
+		}
+		
+	}
+	
+}
+
+
+/*
+	Wide mobile layout 
+	480-767 px
+	Zoomed in above 480 px
+*/
+
+@media screen and (min-width: 30em) {
+	
+	body:before{
+		content:"mobile-wide";
+	}
+	
+	#introduction, article, footer {
+		width: @6cols;
+	}
+	
+	#introduction {
+		margin-bottom: 2em;
+	}
+	
+	header#header{
+		ul{
+			margin: 0 auto;
+			width: @8cols;
+			li{
+				float:none;
+				display: inline;
+				margin: 0 @gutter*1px;
+				width: auto;
+			}
+		}
+	}
+	
+	article {
+		margin-top: 3em;
+		section{
+			width: @6cols;
+			padding: 0;
+		
+			header{
+				width: @6cols;
+			}
+			
+			figure{
+				width: 40%;
+				img{
+				}
+				figcaption{
+					font-size: 0.6em;
+				}
+			}
+			
+		}
+	}
+	
+}
+
+
+/*
+	Tablet layout 
+	600-911 px
+	Zoomed in above 600 px
+*/
+
+@media screen and (min-width: 37.5em) {
+	
+	body:before{
+		content:"tablet";
+	}
+	
+	#introduction, article, footer{
+		width: @8cols;
+	}
+	
+	#sig-container{
+		margin: @1cols auto @1_2cols;
+	}
+	
+	
+	#introduction{
+		
+		margin-bottom: 3em;
+		
+		h1 {
+			.huge;
+			margin-bottom:0px;
+		}
+		h2 {
+			text-transform: lowercase;
+
+			.normal;
+			font-weight: 300;
+			position: relative;
+			right: 2em;
+			top: -0.5em;
+		}
+	}
+	
+	article section{
+		width: @7cols;
+		padding: 0 0 0 @1col;
+		min-height: @3cols;
+		
+		header{
+			width: @3cols;
+			left: -@3cols;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+			-webkit-transform-origin: 100% 0;
+			-moz-transform-origin: 100% 0;
+			-ms-transform-origin: 100% 0;
+			-o-transform-origin: 100% 0;
+			transform-origin: 100% 0;
+			
+			a{
+				display: none;
+			}
+		}
+	}
+
+}
+
+
+/*
+	Widescreen layout 
+	912-1887 px
+	Zoomed in above 912 px
+*/
+
+@media screen and (min-width: 57em) {
+	
+	body:before{
+		content:"wide";
+	}
+		
+	#introduction, article, footer {
+		width: @12cols;
+	}
+	
+	p{
+		font-size: 1.0125em;
+		line-height: 1.51875em;
+	}
+	
+	h3{
+		.large
+	}
+	
+	article section{
+		width: @11cols;
+		padding: 0 0 0 @1col;
+		
+		header{
+			left: -@3cols;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+			-webkit-transform-origin: 100% 0;
+			-moz-transform-origin: 100% 0;
+			-ms-transform-origin: 100% 0;
+			-o-transform-origin: 100% 0;
+			transform-origin: 100% 0;
+		}
+	}
+
+}
+
+/*
+	Huge-screen layout 
+	1888-2520 px
+	Zoomed in above 1920 px
+*/
+
+@media screen and (min-width: 118em) {
+
+	body:before{
+		content:"big";
+	}
+	
+	#introduction, article, footer {
+		width: @13cols+@13cols+(24/@em);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	article section{
+		width: @13cols+@13cols+(24/@em);
+	}
+	
+
+}

@@ -1,0 +1,50 @@
+!!! 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+    meta(name="viewport",content="width=device-width,initial-scale=1")
+    title= title
+    link(rel='stylesheet',href='/stylesheets/style.css')
+  body.loading
+    header#header
+      nav
+        ul
+          li
+            a.scroll(href="#about-me") Who I am
+          li
+            a.scroll(href="#what-i-do") What I do
+          li
+            a.scroll(href="#work") What I've Made
+          li
+            a.scroll(href="#contact") Contact Me
+    
+    
+    != body
+  
+  
+    footer#foot
+      a(href="http://twitter.com/#!/jamesrundquist",target="_blank") @jamesRundquist
+      span.seperator |
+      a(href="http://www.linkedin.com/in/jamesrundquist",target="_blank") LinkedIn
+      span.seperator |
+      a(href="#contact") Contact Me
+
+    //if IE<9
+      script(src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js")
+
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    script(src="/javascripts/modernizr-2.min.js")
+    script(src="/javascripts/canvasStuff.js")
+
+    script(type='text/javascript')
+      $('html, body').animate({scrollTop:'0px'}, 1, 'swing');
+      $('.scroll').bind('click',function(event){
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: ($($anchor.attr('href')).offset().top - ($('#header').height()*1.5))
+        }, 500, 'swing');
+        event.preventDefault();
+      });
+    =!partial('include/analytics')
+    
