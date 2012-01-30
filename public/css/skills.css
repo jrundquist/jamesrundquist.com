@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu:300,400|Open+Sans+Condensed:300&.css');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu:300,400|Open+Sans+Condensed:300&.css');
+body,div,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;border:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,audio,canvas,video{display:block;}
+html{height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+body{min-height:100%;font-size:100%;}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
+b,strong{font-weight:bold;}
+abbr[title]{border-bottom:1px dotted;}
+table{border-collapse:collapse;border-spacing:0;}
+a img,img{-ms-interpolation-mode:bicubic;border:0;}
+input,textarea,button,select{margin:0;font-size:100%;line-height:normal;vertical-align:baseline;}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;}
+input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+textarea{overflow:auto;}
+::selection{background:#e37822;color:white;}
+::-moz-selection{background:#e37822;color:white;}
+img::selection{background:transparent;}
+img::-moz-selection{background:transparent;}
+body{-webkit-tap-highlight-color:#e37822;}
+.content.bars{text-align:center;padding-bottom:24px;}
+ul#skills li{width:120px;display:inline-block;margin:12px;}ul#skills li strong{color:#272827;}
+ul#skills li .skill{height:5px;margin:2px 0;background:#cac9d7;border-bottom:1px solid #ffffff;border-right:1px solid #ffffff;position:absolute;width:120px;}ul#skills li .skill .bar{height:100%;width:0px;background:#272827;}ul#skills li .skill .bar#html5{background:#e37822;width:95%;}ul#skills li .skill .bar#html5.animate{-webkit-animation:html5 1s ease-out;-moz-animation:html5 1s ease-out;-o-animation:html5 1s ease-out;}
+ul#skills li .skill .bar#css3{background:#cc0069;width:95%;}ul#skills li .skill .bar#css3.animate{-webkit-animation:css 1s ease-out;-moz-animation:css 1s ease-out;-o-animation:css 1s ease-out;}
+ul#skills li .skill .bar#php{background:#0092d0;width:95%;}ul#skills li .skill .bar#php.animate{-webkit-animation:php 1s ease-out;-moz-animation:php 1s ease-out;-o-animation:php 1s ease-out;}
+ul#skills li .skill .bar#mysql{background:#147b33;width:90%;}ul#skills li .skill .bar#mysql.animate{-webkit-animation:mysql 1s ease-out;-moz-animation:mysql 1s ease-out;-o-animation:mysql 1s ease-out;}
+ul#skills li .skill .bar#javascript{width:90%;}ul#skills li .skill .bar#javascript.animate{-webkit-animation:js 1s ease-out;-moz-animation:js 1s ease-out;-o-animation:js 1s ease-out;}
+ul#skills li .skill .bar#node{background:#0092d0;width:60%;}ul#skills li .skill .bar#node.animate{-webkit-animation:node 1s ease-out;-moz-animation:node 1s ease-out;-o-animation:node 1s ease-out;}
+ul#skills li .skill .bar#jquery{width:70%;}ul#skills li .skill .bar#jquery.animate{-webkit-animation:jquery 1s ease-out;-moz-animation:jquery 1s ease-out;-o-animation:jquery 1s ease-out;}
+ul#skills li .skill .bar#python{background:#e37822;width:75%;}ul#skills li .skill .bar#python.animate{-webkit-animation:python 1s ease-out;-moz-animation:python 1s ease-out;-o-animation:python 1s ease-out;}
+ul#skills li .skill .bar#RoR{background:#147b33;width:30%;}ul#skills li .skill .bar#RoR.animate{-webkit-animation:RoR 1s ease-out;-moz-animation:RoR 1s ease-out;-o-animation:RoR 1s ease-out;}
+ul#skills li .skill .bar#matlab{background:#cc0069;width:50%;}ul#skills li .skill .bar#matlab.animate{-webkit-animation:matlab 1s ease-out;-moz-animation:matlab 1s ease-out;-o-animation:matlab 1s ease-out;}
+ul#skills li .skill .bar#c{background:#e37822;width:50%;}ul#skills li .skill .bar#c.animate{-webkit-animation:c 1s ease-out;-moz-animation:c 1s ease-out;-o-animation:c 1s ease-out;}
+ul#skills li .skill .bar#cpp{background:#cc0069;width:50%;}ul#skills li .skill .bar#cpp.animate{-webkit-animation:cpp 1s ease-out;-moz-animation:cpp 1s ease-out;-o-animation:cpp 1s ease-out;}
+ul#skills li .skill .bar#labview{background:#0092d0;width:20%;}ul#skills li .skill .bar#labview.animate{-webkit-animation:labview 1s ease-out;-moz-animation:labview 1s ease-out;-o-animation:labview 1s ease-out;}
+ul#skills li .skill .bar#java{background:#147b33;width:80%;}ul#skills li .skill .bar#java.animate{-webkit-animation:java 1s ease-out;-moz-animation:java 1s ease-out;-o-animation:java 1s ease-out;}
+ul#skills li .skill .bar#opencv{width:70%;}ul#skills li .skill .bar#opencv.animate{-webkit-animation:opencv 1s ease-out;-moz-animation:opencv 1s ease-out;-o-animation:opencv 1s ease-out;}
+ul#skills li .skill .bar#vb{background:#e37822;width:10%;}ul#skills li .skill .bar#vb.animate{-webkit-animation:vb 1s ease-out;-moz-animation:vb 1s ease-out;-o-animation:vb 1s ease-out;}
+@-webkit-keyframes html5{0%{width:0px;} 100%{width:95%;}}@-moz-keyframes html5{0%{width:0px;} 100%{width:95%;}}@-webkit-keyframes css{0%{width:0px;} 100%{width:95%;}}@-moz-keyframes css{0%{width:0px;} 100%{width:95%;}}@-webkit-keyframes php{0%{width:0px;} 100%{width:95%;}}@-moz-keyframes php{0%{width:0px;} 100%{width:95%;}}@-webkit-keyframes mysql{0%{width:0px;} 100%{width:90%;}}@-moz-keyframes mysql{0%{width:0px;} 100%{width:90%;}}@-webkit-keyframes js{0%{width:0px;} 100%{width:90%;}}@-moz-keyframes js{0%{width:0px;} 100%{width:90%;}}@-webkit-keyframes node{0%{width:0px;} 100%{width:60%;}}@-moz-keyframes node{0%{width:0px;} 100%{width:60%;}}@-webkit-keyframes jquery{0%{width:0px;} 100%{width:70%;}}@-moz-keyframes jquery{0%{width:0px;} 100%{width:70%;}}@-webkit-keyframes python{0%{width:0px;} 100%{width:75%;}}@-moz-keyframes python{0%{width:0px;} 100%{width:75%;}}@-webkit-keyframes RoR{0%{width:0px;} 100%{width:30%;}}@-moz-keyframes RoR{0%{width:0px;} 100%{width:30%;}}@-webkit-keyframes matlab{0%{width:0px;} 100%{width:50%;}}@-moz-keyframes matlab{0%{width:0px;} 100%{width:50%;}}@-webkit-keyframes c{0%{width:0px;} 100%{width:50%;}}@-moz-keyframes c{0%{width:0px;} 100%{width:50%;}}@-webkit-keyframes cpp{0%{width:0px;} 100%{width:50%;}}@-moz-keyframes cpp{0%{width:0px;} 100%{width:50%;}}@-webkit-keyframes labview{0%{width:0px;} 100%{width:20%;}}@-moz-keyframes labview{0%{width:0px;} 100%{width:20%;}}@-webkit-keyframes java{0%{width:0px;} 100%{width:80%;}}@-moz-keyframes java{0%{width:0px;} 100%{width:80%;}}@-webkit-keyframes opencv{0%{width:0px;} 100%{width:70%;}}@-moz-keyframes opencv{0%{width:0px;} 100%{width:70%;}}@-webkit-keyframes vb{0%{width:0px;} 100%{width:10%;}}@-moz-keyframes vb{0%{width:0px;} 100%{width:10%;}}
