@@ -102,16 +102,13 @@ jQuery(function ($) {
 	if ( !Modernizr.canvas ){
 		$('#container').append('<img id="sig" src="/images/sig.png" alt="James Rundquist" />');
 	}else{
-		
 		canvas = document.createElement("canvas");
 		canvas.id = "sig";
 		canvas.width = 420;
 		canvas.height = 110;
 		ctx = canvas.getContext('2d');
 		$('#sig-container').append(canvas);
-		
 		color = $(canvas).css('color');
-		
 		$.ajax({
 			url:'/javascripts/sig.pts',
 			dataType:'text',
@@ -127,12 +124,7 @@ jQuery(function ($) {
 						
 						pts[0] = (pts[0] - 340) * .4;
 						pts[1] = (pts[1] - 200) * .3;
-						
-						lines
-						
 						if ( [null,0,6,12,17,24,37].indexOf(s) > 0 ){
-							console.log('pushhing ',s);
-							
 							lines.push(new Curve(Array(), 3, color, .01, false, 20));
 						}
 						lines[lines.length-1].points.push(new Point(pts[0],pts[1]));
@@ -141,18 +133,13 @@ jQuery(function ($) {
 				requestAnimFrame(draw);
 			}
 		});
-
-
-		
 	}
 	
 	function draw(){
 		drawlines = Array();
 		drawlines = deepCopy(lines);
-		//undraw();
 		updateLines();
 	}
-
 	function undraw(){
 		ctx.globalAlpha = 1;
 		ctx.fillStyle = '#fff';
@@ -160,7 +147,6 @@ jQuery(function ($) {
 		ctx.rect(0,0,canvas.width,canvas.height);
 		ctx.fill();
 	}
-	
 	function updateLines(){
 		if ( drawlines[0] !== undefined ){
 			drawlines[0].update(ctx);
@@ -168,20 +154,9 @@ jQuery(function ($) {
 			requestAnimFrame(updateLines);
 		}else{
 			$('body').removeClass('loading').addClass('fade');
+			$('.bar').each(function(){$(this).addClass('animate');});
 		}
 	}
-	
-
-
-	// Error functions
-	function fatalError(id){
-		$obj = $('#'+id);
-		console.log($obj);
-		text = $obj!==undefined?$obj.html():'<div id="error">An unexpected error has occured</div>';
-		$("body").empty().addClass('error').append(text);
-	}
-
-
 });
 
 

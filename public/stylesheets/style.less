@@ -1,5 +1,6 @@
 @import 'vars.less';
 @import 'frameless.less';
+@import 'skills.less';
 
 body{
 	color: @font;
@@ -17,12 +18,30 @@ p {
 	text-align: justify;
 	font-weight: lighter;
 	margin-bottom: 1em;
-	.small
+	.small();
 }
 strong{
 	font-weight: inherit;
  	color: @highlight;
 }
+h1 small{
+	.normal();
+	font-weight: bold;
+	color: @grey;
+}
+h2 small{
+	.normal();
+	font-weight: bold;
+	color: @grey;
+}
+h3 small{
+	.small();
+	color: @grey;
+}
+h4 small{
+	.small();
+	color: @grey;
+}	
 
 header#header{
 	background-color: rgba(20, 20, 20, 0.6);
@@ -104,35 +123,81 @@ article{
 				text-transform: uppercase;
 				border-bottom: 1px solid #555;
 				margin-bottom: 0.1em;
+				small{
+					.normal();
+					color: @grey;
+					font-weight: 600;
+				}
 			}
 		}
-
 		figure{
 			float: right;
-			width: 30%;
+			width: @2cols;
 			margin-left: 5%;
-			padding: 0.1em;
-			border: 0.3em solid @font;
+			padding: 1px;
+			border: 3px solid @font;
+			&.left{
+				float: left;
+				margin-left: 0%;
+				margin-right: 5%;
+			}
+			&.thumb{
+				width: @1cols;
+				margin-left: 3%;
+				padding: 1px;
+				border: 2px solid @font;
+				&.left{
+					margin-left: 0%;
+					margin-right: 3%;
+				}
+			}
 			img{
 				max-width: 100%;
 				float:left;
 			}
 			figcaption{
 				clear:both;
-				background: @grey;
-				color: @white;
+				background: @whiteSmoke;
+				color: @font;
 				font-family: 'Ubuntu', sans-serif;
-				font-size: 0.6em;
-				line-height: 110%;
+				.small();
 				padding: 0.2em 5%;
-				margin:0;
+				margin-top:1px;
 			}
 		}
 	}
 }
 
-
-
+.breakout{
+	background: @whiteSmoke;
+	h1{
+		margin-left: @gutter*@px/2;
+		padding-top: @gutter*@px/4;
+	}
+	margin-bottom: @gutter*@px;
+}
+.project{
+	width: @4cols;
+	margin-right: @gutter*@px;
+	display: inline-block;
+	vertical-align: top;
+	h1{
+		.large();
+	}
+	img{
+		width: @4cols - 4px;
+		height: @2cols - 4px;
+		border: 1px solid @blue;
+		padding: 1px;
+		box-shadow: 0 0 3px @black;
+	}
+	p{
+		.small();
+	}
+	&:nth-child(3n+1){
+		margin-right: 0;
+	}
+}
 
 
 footer{
@@ -157,20 +222,6 @@ footer{
 	transition: opacity 1s ease-in-out;
 }
 
-/*
-	Full page zooms
-	0.882352941 0.941176471 1.058823529 1.117647059
-*/
-
-@media screen and (max-width: 16.875em) {	
-	body {
-		font-size: (@font-size - 2)/16*1em;
-	}
-	#introduction, article {
-		padding-left: 10/@em;
-		padding-right: 10/@em;
-	}
-}
 
 /*
 	Mobile layout 
@@ -178,7 +229,7 @@ footer{
 	Zoomed out below 320 px
 */
 
-@media screen and (min-width: 15em) {
+@media screen and (min-width: 240px) {
 	
 	body:before{
 		content:"mobile";
@@ -247,10 +298,10 @@ footer{
 			-o-transform: none;
 			transform: none;
 		}
-		
 		figure{
-			width: 50%;
-			img{
+			width: @2cols;
+			&.thumb{
+				width: @2cols;
 			}
 			figcaption{
 				font-size: 0.4em;
@@ -268,7 +319,7 @@ footer{
 	Zoomed in above 480 px
 */
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 480px) {
 	
 	body:before{
 		content:"mobile-wide";
@@ -306,17 +357,16 @@ footer{
 			}
 			
 			figure{
-				width: 40%;
-				img{
+				width: @3cols;
+				&.thumb{
+					width: @2cols;
 				}
 				figcaption{
 					font-size: 0.6em;
 				}
 			}
-			
 		}
 	}
-	
 }
 
 
@@ -326,7 +376,7 @@ footer{
 	Zoomed in above 600 px
 */
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 600px) {
 	
 	body:before{
 		content:"tablet";
@@ -386,6 +436,12 @@ footer{
 				display: none;
 			}
 		}
+		figure{
+			width: @3cols;
+			&.thumb{
+				width: @2cols;
+			}
+		}
 	}
 
 }
@@ -397,7 +453,7 @@ footer{
 	Zoomed in above 912 px
 */
 
-@media screen and (min-width: 57em) {
+@media screen and (min-width: 912px) {
 	
 	body:before{
 		content:"wide";
@@ -417,7 +473,7 @@ footer{
 	}
 	
 	article section{
-		width: @11cols;
+		width: @12cols;
 		padding: 0 0 0 @1col;
 		
 		header{
@@ -436,6 +492,12 @@ footer{
 			-o-transform-origin: 100% 0;
 			transform-origin: 100% 0;
 		}
+		figure{
+			width: @4cols;
+			&.thumb{
+				width: @2cols;
+			}
+		}
 	}
 
 }
@@ -446,7 +508,7 @@ footer{
 	Zoomed in above 1920 px
 */
 
-@media screen and (min-width: 118em) {
+@media screen and (min-width: 1888px) {
 
 	body:before{
 		content:"big";

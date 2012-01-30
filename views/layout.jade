@@ -6,18 +6,18 @@ html(lang="en")
     meta(name="viewport",content="width=device-width,initial-scale=1")
     title= title
     link(rel='stylesheet',href='/stylesheets/style.css')
-  body.loading
+  body.dev
     header#header
       nav
         ul
           li
-            a.scroll(href="#about-me") Who I am
+            a.scroll(href="#about") About
           li
-            a.scroll(href="#what-i-do") What I do
+            a.scroll(href="#work") Work
           li
-            a.scroll(href="#work") What I've Made
+            a.scroll(href="#play") Play
           li
-            a.scroll(href="#contact") Contact Me
+            a.scroll(href="#contact") Contact
     
     
     != body
@@ -29,6 +29,8 @@ html(lang="en")
       a(href="http://www.linkedin.com/in/jamesrundquist",target="_blank") LinkedIn
       span.seperator |
       a(href="#contact") Contact Me
+      span.seperator |
+      a(href="/assets/james-rundquist-resume.pdf",title="Resume",target="_blank") R&eacute;sum&eacute
 
     //if IE<9
       script(src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js")
