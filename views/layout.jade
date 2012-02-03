@@ -5,6 +5,7 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
     meta(name="viewport",content="width=device-width,initial-scale=1")
     title= title
+    link(rel="icon",type="image/png",href="/favicon.png")
     link(rel='stylesheet',href='/stylesheets/style.css')
   body.loading
     header#header
@@ -30,14 +31,17 @@ html(lang="en")
       span.seperator |
       a(href="#contact") Contact Me
       span.seperator |
-      a(href="/assets/james-rundquist-resume.pdf",title="Resume",target="_blank") R&eacute;sum&eacute
+      a(href="/assets/james-rundquist-resume.pdf",title="Resume",target="_blank") R&eacute;sum&eacute;
 
     //if IE<9
       script(src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js")
 
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    //script(src="http://html5form.googlecode.com/svn/trunk/jquery.html5form-1.5-min.js")
+    
     script(src="/javascripts/modernizr-2.min.js")
     script(src="/javascripts/canvasStuff.js")
+    script(src="/javascripts/jquery.html5form-1.5.js")
 
     script(type='text/javascript')
       $('html, body').animate({scrollTop:'0px'}, 1, 'swing');
@@ -48,6 +52,14 @@ html(lang="en")
         }, 500, 'swing');
         event.preventDefault();
       });
-      
+      if ( $('#contact-form').length !== 0 ){
+          $('#contact-form').html5form({
+           allBrowsers : true,
+           messages: 'en',
+           method : 'POST',
+           action: '/contact/',
+           responseDiv: '#contact-response'
+          });
+        }
     !=partial('include/analytics')
     

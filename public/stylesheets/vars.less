@@ -29,5 +29,45 @@
 @opencv_lvl: 70%;
 @vb_lvl: 10%;
 
+@bar_time: 1500ms;
+
 /* Fonts */
 @import  url('https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu:300,400|Open+Sans+Condensed:300&.css');
+
+
+/* Mixins */
+.border-radius(@size){
+	-webkit-border-radius: @size;
+	-moz-border-radius: @size;
+	border-radius: @size;
+}
+.box-shadow(@shadow){
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	-o-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+.box-shadow2(@shadow, @shadow2){
+	-webkit-box-shadow: @shadow, @shadow2;
+	-moz-box-shadow: @shadow, @shadow2;
+	-o-box-shadow: @shadow, @shadow2;
+	box-shadow: @shadow, @shadow2;
+}
+.transition(@trans){
+	-webkit-transition: @trans;
+	-moz-transition: @trans;
+	-ms-transition: @trans;
+	-o-transition: @trans;
+	transition: @trans;
+}
+.gradient(@white, @whiteSmoke, @size){
+	background-color: @whiteSmoke;
+	background-repeat: no-repeat;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@white), color-stop(@size, @white), to(@whiteSmoke));
+	background-image: -webkit-linear-gradient(@white, @white @size, @whiteSmoke);
+	background-image: -moz-linear-gradient(top, @white, @white @size, @whiteSmoke);
+	background-image: -ms-linear-gradient(@white, @white @size, @whiteSmoke);
+	background-image: -o-linear-gradient(@white, @white @size, @whiteSmoke);
+	background-image: linear-gradient(@white, @white @size, @whiteSmoke);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr=@whiteSmoke, GradientType=0);
+}

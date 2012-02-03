@@ -1,0 +1,12 @@
+<p>Hello James,</p> 
+<p>Contact message from jamesrundquist.com</p>
+<p>
+<strong>From</strong><br \>-------------<br />
+{{name}} - {{email}}<br />
+------------- <br />
+</p>
+<p>
+<strong>Message</strong><br />-------------<br />
+{{message}}<br />
+-------------
+</p>

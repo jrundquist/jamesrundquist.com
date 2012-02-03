@@ -41,7 +41,58 @@ h3 small{
 h4 small{
 	.small();
 	color: @grey;
-}	
+}
+
+input, select, textarea{
+	display: inline-block;
+	width: 210px;
+	height: 18px;
+	padding: 4px;
+	font-size: 13px;
+	line-height: 18px;
+	color: darken(@grey, 40%);
+	border: 1px solid #CCC;
+	.border-radius(3px);
+	.box-shadow(inset 0 1px 3px rgba(0,0,0,0.1));
+	&:focus{
+		outline: none;
+		.box-shadow(0 0 4px @orange);
+	}
+}
+button{
+	display: inline-block;
+	@whiteSmoke: lighten(@grey, 25%);
+	.gradient(@white, @whiteSmoke, 25%);
+	padding: 4px 12px 5px;
+	border: 1px solid #CCC;
+	.normal();
+	.border-radius(4px);
+	.box-shadow2(inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05));
+	.transition(0.05s linear all);
+	&:hover{
+		background-position: 0 -10px;
+	}
+	&:active{
+		.box-shadow2(inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05));
+	}
+}
+form{
+	padding-bottom: @gutter*0.5*@px;
+	fieldset{
+		legend{
+			.large();
+		}
+	}
+}
+label{
+	display: block;
+	float: none;
+	width: auto;
+	font-weight: bold;
+	text-align: left;
+	line-height: 20px;
+	padding-top: 0;
+}
 
 header#header{
 	background-color: rgba(20, 20, 20, 0.6);
@@ -113,7 +164,7 @@ article{
 		position: relative;
 	
 		header {
-			background-color: @white;
+			background-color: transparent;
 			height: @1col;
 			width: @3cols;
 			text-align: right;
@@ -199,6 +250,36 @@ article{
 	}
 }
 
+.column{
+	display: inline-block;
+	width: @6cols;
+	margin-right: @gutter*@px;
+	&:nth-child(2n+1){
+		margin-right: 0;
+	}
+	vertical-align: top;
+	dl{
+		display: inline-block;
+		width: @3cols;
+		margin-right: @gutter*@px;
+	}
+}
+.input{
+	margin-bottom: 9px;
+	input, select, textarea{
+		width: @6cols - 10px;
+	}
+	textarea{
+		height: @2cols;
+	}
+}
+#contact-response{
+	float: right;
+	color: @blue;
+	p{
+		color: @pink;
+	}
+}
 
 footer{
 	clear: both;
@@ -206,7 +287,13 @@ footer{
  	padding: 0 0 @2cols 0;
 	font-family: 'Ubuntu', sans-serif;
 	border-top: 1px solid @font;
-	.small;
+	.small();
+	a{
+		margin: 0 5px;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
 }
 
 
@@ -253,7 +340,6 @@ footer{
 		}
 	}
 	
-	
 	#introduction, article, footer {
 		width: @4cols;
 		max-width: none;
@@ -266,30 +352,25 @@ footer{
 	}
 	
 	#introduction{
-		
 		#sig-container{
 			margin: @1_2cols auto @1_2cols;
 		}
-		
 		h1 {
-			.large;
+			.large();
 			margin-bottom:0px;
 		}
 		h2 {
 			text-transform: lowercase;
-
-			.small;
+			.small();
 			font-weight: 300;
 			position: relative;
 			right: 1em;
 			top: -0.5em;
 		}
 	}
-	
 	article section{
 		width: @4cols;
 		padding: 0;
-		
 		header {
 			width: @4cols;
 			-webit-transform: none;
@@ -307,9 +388,15 @@ footer{
 				font-size: 0.4em;
 			}
 		}
-		
 	}
-	
+	.column{
+		width: @4cols;
+	}
+	.input{
+		input, select, textarea{
+			width: @4cols - 10px;
+		}
+	}
 }
 
 
@@ -320,19 +407,15 @@ footer{
 */
 
 @media screen and (min-width: 480px) {
-	
 	body:before{
 		content:"mobile-wide";
 	}
-	
 	#introduction, article, footer {
 		width: @6cols;
 	}
-	
 	#introduction {
 		margin-bottom: 2em;
 	}
-	
 	header#header{
 		ul{
 			margin: 0 auto;
@@ -345,17 +428,14 @@ footer{
 			}
 		}
 	}
-	
 	article {
 		margin-top: 3em;
 		section{
 			width: @6cols;
 			padding: 0;
-		
 			header{
 				width: @6cols;
 			}
-			
 			figure{
 				width: @3cols;
 				&.thumb{
@@ -365,6 +445,14 @@ footer{
 					font-size: 0.6em;
 				}
 			}
+		}
+	}
+	.column{
+		width: @6cols;
+	}
+	.input{
+		input, select, textarea{
+			width: @6cols - 10px;
 		}
 	}
 }
@@ -378,23 +466,15 @@ footer{
 
 @media screen and (min-width: 600px) {
 	
-	body:before{
-		content:"tablet";
-	}
-	
+
 	#introduction, article, footer{
 		width: @8cols;
 	}
-	
 	#sig-container{
 		margin: @1cols auto @1_2cols;
 	}
-	
-	
 	#introduction{
-		
 		margin-bottom: 3em;
-		
 		h1 {
 			.huge;
 			margin-bottom:0px;
@@ -414,7 +494,6 @@ footer{
 		width: @7cols;
 		padding: 0 0 0 @1col;
 		min-height: @3cols;
-		
 		header{
 			width: @3cols;
 			left: -@3cols;
@@ -443,7 +522,20 @@ footer{
 			}
 		}
 	}
-
+	.project{
+		width: 228px;
+		margin-right: @gutter*@px;
+		img{
+			width: 228px - 4px;
+			height: @2cols - 4px;
+		}
+		&:nth-child(3n+1){
+			margin-right: @gutter*@px;
+		}
+		&:nth-child(2n+1){
+			margin-right: 0;
+		}
+	}
 }
 
 
@@ -469,13 +561,12 @@ footer{
 	}
 	
 	h3{
-		.large
+		.large();
 	}
 	
 	article section{
 		width: @12cols;
 		padding: 0 0 0 @1col;
-		
 		header{
 			left: -@3cols;
 			overflow: hidden;
@@ -497,6 +588,17 @@ footer{
 			&.thumb{
 				width: @2cols;
 			}
+		}
+	}
+	.project{
+		width: @4cols;
+		margin-right: @gutter*@px;
+		img{
+			width: @4cols - 4px;
+			height: @2cols - 4px;
+		}
+		&:nth-child(3n+1){
+			margin-right: 0;
 		}
 	}
 
