@@ -9,6 +9,7 @@
     , "connect-less": ">=0.2.2"
     , "ezcrypto": ">=0.0.3"
     , "mongoose": ">=0.9.7"
-		, "connect": "1.8.x"
+    , "mailer": "latest"
+    , "connect": "1.8.x"
   }
 }
